@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/assets/img/icon.webp" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BLACKJACK</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Whisper&family=Work+Sans:wght@100&display=swap" rel="stylesheet">
+  </head>
+  <body id="background">
+  <div >
+    <header class="titulo">
+      <div class="title-center">
+        <div class="step-separator"></div>
+        <h4 class="title">BLACKJACK</h4>
+        <div class="step-separator"></div>
+
+      </div>
+      <h5>Test your luck</h5>
+
+    </header>
+
+    <audio id="backgroundAudio" src="./public/assets/audio/backgrounMusic.mp3" loop preload="auto"></audio>
+    <audio id="soundButton" src="./public/assets/audio/button.mp3" preload="auto"></audio>
+    <audio id="soundCard" src="./public/assets/audio/card.mp3" preload="auto"></audio>
+    <audio id="winner" src="./public/assets/audio/Victory.mp3" preload="auto"></audio>
+    <audio id="looser" src="./public/assets/audio/loose.mp3" preload="auto"></audio>
+    <audio id="tie" src="./public/assets/audio/tie.mp3" preload="auto"></audio>
+
+    <button id="pauseButton" class="backgroundMusic">
+      <i class="bi bi-volume-up"></i>
+    </button>
+    <button id="playButton" class="backgroundMusic" style="display: none;">
+      <i class="bi bi-volume-mute"></i>
+    </button>
+
+    <div id="btnMenuContainer">
+      <h1 class="font mt-4">Menu</h1>
+      <div class="btnOpt">
+        <button id="btnStart" class="start btnC">Start Game</button>
+        <button id="btnHow" class="stay btnC">How to play</button>
+      </div>
+      <h3 class="font mt-4">Table Color</h3>
+      <div class="btnColor">
+        <button id="color1" class="btnM color_one">Green</button>
+        <button id="color2" class="btnM color_two">Blue-Green</button>
+        <button id="color3" class="btnM color_three">Blue</button>
+        <button id="color4" class="btnM color_fourth">Red</button>
+        <button id="color5" class="btnM color_five">Black</button>
+        <button id="color6" class="btnM color_six">Brown</button>
+      </div>
+      <h3 class="font mt-4">Player Name</h3>
+      <div class="submitName">
+        <label for="newName"></label><input type="text" id="newName" placeholder="max 15 character..." maxlength="15">
+        <button id="changeName">Apply</button>
+      </div>
+    </div>
+
+    <div id="howToContainer" class="animatedFast fadeIn" style="display: none;">
+      <div class="howDisplay">
+        <h1><b>How to play</b></h1>
+        <p>
+          Beat The Dealer. There are some misconceptions about the objective of the game of blackjack but at the
+          simplest level all you are trying to do is beat the dealer.<br><br>
+
+          <b>How do you beat the dealer?</b><br><br>
+
+          - By drawing a hand value that is higher than the dealer’s hand value<br>
+          - By the dealer drawing a hand value that goes over 21.<br>
+          - By drawing a hand value of 21 on your first two cards, when the dealer does not.<br><br>
+
+          <b>How do you lose to the dealer?</b><br><br>
+
+          - Your hand value exceeds 21.<br>
+          - The dealers hand has a greater value than yours at the end of the round<br><br>
+
+          <b>Blackjack is played with a conventional deck of 52 playing cards and suits don’t matter.</b><br><br>
+
+          - 2 through 10 count at face value, i.e. a 2 counts as two, a 9 counts as nine.<br>
+          - Face cards (J,Q,K) count as 10.<br>
+          - Ace can count as a 1 or an 11 depending on which value helps the hand the most.<br><br>
+
+          <button id="btnClose" class="btn new">Close</button>
+
+        </p>
+
+      </div>
+
+    </div>
+
+
+
+    <div id="gameContainer" style="display: none;">
+      <div class="bodies">
+        <div>
+          <div class="cards">
+            <div id="computadora-cartas" class="divCartas"></div>
+
+          </div>
+
+        </div>
+
+        <div class="panel">
+          <div class="step-separator one"></div>
+          <div class="letter">
+            <h1>Dealer count: <small>0</small></h1>
+            <div id="finContainer" style="display: none;">
+              <div class="msgContainer">
+                <h1 class="msg"></h1>
+                <h3 class="msg"></h3>
+              </div>
+              <button id="btnOver" class="new btn">try again</button>
+              <button id="btnBack2" class="start btn">Back to Menu</button>
+
+            </div>
+            <div id="displayContainer">
+              <button id="btnDraw" class="draw btn">Draw Card</button>
+              <button id="btnStay" class="stay btn">Stay</button>
+              <button id="btnNew" class="new btn">Reset Game</button>
+              <button id="btnBack" class="start btn">Back to Menu</button>
+            </div>
+            <h1><span id="playerName">Player</span> count: <small>0</small></h1>
+          </div>
+          <div class="step-separator one"></div>
+
+        </div>
+
+        <div class="table-down">
+          <div>
+            <div id="jugador-cartas" class="divCartas" ></div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+    <div id="app"></div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
